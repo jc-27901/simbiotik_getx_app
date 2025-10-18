@@ -3,7 +3,7 @@ import 'package:simbiotik_getx_app/data/repositories/auth_repository_implementat
 import 'package:simbiotik_getx_app/domain/repositories/auth_repository.dart';
 import 'package:simbiotik_getx_app/presentation/controllers/auth_controllers.dart';
 
-class DependencyInject {
+class DependencyInjection {
   static void init() {
     // Repository
     Get.lazyPut<AuthRepository>(() => AuthRepositoryImpl(), fenix: true);
