@@ -24,7 +24,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 40),
                 const Text(
-                  'Welcome Back',
+                  'Simbiotik Tech',
                   style: TextStyle(
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
@@ -43,11 +43,11 @@ class LoginPage extends StatelessWidget {
                     ? const CircularProgressIndicator()
                     : ElevatedButton.icon(
                   onPressed: () => authController.signInWithGoogle(),
-                  // icon: Image.network(
-                  //   'https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg',
-                  //   height: 24,
-                  //   width: 24,
-                  // ),
+                  icon: Image.network(
+                    'https://www.azumuta.com/wp-content/uploads/2024/03/integrations-logo-google.png',
+                    height: 24,
+                    width: 24,
+                  ),
                   label: const Text(
                     'Sign in with Google',
                     style: TextStyle(fontSize: 16),
