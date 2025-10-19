@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../domain/entities/meal_entity.dart';
+import 'quantity_button.dart';
 
 class MealCard extends StatelessWidget {
   final MealEntity meal;
@@ -61,7 +62,7 @@ class MealCard extends StatelessWidget {
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
-                  maxLines: 2,
+                  maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
                 const SizedBox(height: 8),
@@ -69,7 +70,7 @@ class MealCard extends StatelessWidget {
                   children: [
                     const Icon(Icons.currency_rupee, size: 16, color: Colors.green),
                     Text(
-                      meal.price.toStringAsFixed(0),
+                      '${meal.price.toStringAsFixed(0)}',
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -88,6 +89,8 @@ class MealCard extends StatelessWidget {
                     ),
                   ],
                 ),
+                const SizedBox(height: 8),
+                QuantityButton(meal: meal),
               ],
             ),
           ),

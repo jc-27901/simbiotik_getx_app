@@ -1,11 +1,12 @@
 import 'package:get/get.dart';
 import 'package:simbiotik_getx_app/data/dataSource/api_client.dart';
 import 'package:simbiotik_getx_app/data/repositories/auth_repository_implementation.dart';
-import 'package:simbiotik_getx_app/data/repositories/meal_repository_impl.dart';
-import 'package:simbiotik_getx_app/domain/repositories/auth_repository.dart';
-import 'package:simbiotik_getx_app/domain/repositories/meal_repository.dart';
 import 'package:simbiotik_getx_app/presentation/controllers/auth_controllers.dart';
-import 'package:simbiotik_getx_app/presentation/controllers/meal_controller.dart';
+import '../data/repositories/meal_repository_impl.dart';
+import '../domain/repositories/auth_repository.dart';
+import '../domain/repositories/meal_repository.dart';
+import '../presentation/controllers/meal_controller.dart';
+import '../presentation/controllers/cart_controller.dart';
 
 class DependencyInjection {
   static void init() {
@@ -25,6 +26,10 @@ class DependencyInjection {
     );
     Get.lazyPut<MealController>(
           () => MealController(Get.find<MealRepository>()),
+      fenix: true,
+    );
+    Get.lazyPut<CartController>(
+          () => CartController(),
       fenix: true,
     );
   }

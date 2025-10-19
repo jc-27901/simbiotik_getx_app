@@ -5,6 +5,7 @@ import '../controllers/meal_controller.dart';
 import '../widgets/app_drawer.dart';
 import '../widgets/category_tabs.dart';
 import '../widgets/meal_card.dart';
+import '../widgets/cart_badge.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -19,6 +20,7 @@ class HomePage extends StatelessWidget {
         title: const Text('Meals'),
         elevation: 2,
         actions: [
+          const CartBadge(),
           Obx(() {
             final user = authController.user;
             if (user?.photoUrl != null) {
@@ -42,7 +44,7 @@ class HomePage extends StatelessWidget {
           const SizedBox(height: 16),
           Expanded(
             child: Obx(() {
-              if (mealController.isLoadingMeals /*&& mealController.meals.isEmpty*/) {
+              if (mealController.isLoadingMeals && mealController.meals.isEmpty) {
                 return const Center(child: CircularProgressIndicator());
               }
 
@@ -85,10 +87,9 @@ class HomePage extends StatelessWidget {
                   padding: const EdgeInsets.all(16),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    // childAspectRatio: 0.70,
                     crossAxisSpacing: 16,
                     mainAxisSpacing: 16,
-                    mainAxisExtent: 260,
+                    mainAxisExtent: 300
                   ),
                   itemCount: mealController.meals.length,
                   itemBuilder: (context, index) {
