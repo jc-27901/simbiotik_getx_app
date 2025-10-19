@@ -18,20 +18,23 @@ class AppDrawer extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor,
               ),
-              currentAccountPicture: CircleAvatar(
-                backgroundColor: Colors.white,
-                backgroundImage: user?.photoUrl != null
-                    ? NetworkImage(user!.photoUrl!)
-                    : null,
-                child: user?.photoUrl == null
-                    ? Text(
-                  user?.displayName?.substring(0, 1).toUpperCase() ?? 'U',
-                  style: TextStyle(
-                    fontSize: 40,
-                    color: Theme.of(context).primaryColor,
-                  ),
-                )
-                    : null,
+              currentAccountPicture: Padding(
+                padding: const EdgeInsets.only(bottom: 20.0),
+                child: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  backgroundImage: user?.photoUrl != null
+                      ? NetworkImage(user!.photoUrl!)
+                      : null,
+                  child: user?.photoUrl == null
+                      ? Text(
+                    user?.displayName?.substring(0, 1).toUpperCase() ?? 'U',
+                    style: TextStyle(
+                      fontSize: 40,
+                      color: Theme.of(context).primaryColor,
+                    ),
+                  )
+                      : null,
+                ),
               ),
               accountName: Text(
                 user?.displayName ?? 'No Name',

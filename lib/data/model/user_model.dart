@@ -1,4 +1,4 @@
-import 'package:simbiotik_getx_app/domain/entities.dart';
+import 'package:simbiotik_getx_app/domain/entities/user_entities.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class UserModel extends UserEntity {

@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:simbiotik_getx_app/data/model/user_model.dart';
-import 'package:simbiotik_getx_app/domain/entities.dart';
+import 'package:simbiotik_getx_app/domain/entities/user_entities.dart';
 import 'package:simbiotik_getx_app/domain/repositories/auth_repository.dart';
 
 class AuthRepositoryImpl implements AuthRepository {

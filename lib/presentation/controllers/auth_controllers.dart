@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:simbiotik_getx_app/domain/entities.dart';
+import 'package:simbiotik_getx_app/domain/entities/user_entities.dart';
 import 'package:simbiotik_getx_app/domain/repositories/auth_repository.dart';
 
 class AuthController extends GetxController {
